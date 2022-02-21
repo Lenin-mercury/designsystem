@@ -30,7 +30,7 @@ export interface RadioButtonProps {
   direction?: "row" | "column";
 }
 
-const styled = (): StyleRules =>
+const styles = (): StyleRules =>
   createStyles({
     root: {
       color: "black",
@@ -95,12 +95,12 @@ const RadioButton = (props: RadioButtonProps): JSX.Element => {
                               checked: props.classes.checked
                           }}
                           checkedIcon={
-                              <img src={props.radioIcon ? props.radioIcon.checkedIcon : circleCheckedFilled}
+                              <img src={props.radioIcon ? props.radioIcon.checkedIcon : ""}
                               className={props.classes.iconStyle}
                               />
                           }
                           icon={
-                              <img src={props.radioIcon ? props.radioIcon.unCheckedIcon : GreyCheck}
+                              <img src={props.radioIcon ? props.radioIcon.unCheckedIcon : ""}
                               className={props.classes.iconStyle}
                               />
                             }

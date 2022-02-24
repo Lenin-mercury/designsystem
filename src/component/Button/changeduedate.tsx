@@ -2,12 +2,13 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 import RadioButton from "../RadioButton/RadioButton";
+import { styles } from "./changeduedate.styles";
 
 interface changeDueDateProps {
   classes: Record<string, string>;
 }
 
-const changeDueDate = (props: changeDueDateProps): JSX.Element => {
+const ChangeDueDate = (props: changeDueDateProps): JSX.Element => {
   const { classes } = props;
 
   let radioOptions = [
@@ -52,41 +53,38 @@ const changeDueDate = (props: changeDueDateProps): JSX.Element => {
         </div>
         <div className={classes.btn}>
           <RadioButton
-           data={radioOptions}
-           variant="standard"
-           direction="row"
-           checkChanged={()=>console.log("changed")}
+            classes={{root: props.classes.radioButtonStyle}}
+            data={radioOptions}
+            variant="standard"
+            direction="row"
+            checkChanged={() => console.log("changed")}
           />
         </div>
       </div>
       <div className={classes.customer}>
-          <div className={classes.span}>
-              <span>Select Customer Reason</span>
-
-          </div>
-          <div className={classes.customerGrp}>
+        <div className={classes.span}>
+          <span>Select Customer Reason</span>
+        </div>
+        <div className={classes.customerGrp}>
           <RadioButton
-           data={radioOptions1}
-           variant="outlined"
-           direction="row"
-           checkChanged={()=>console.log("changed")}
+            classes={{root: props.classes.calendar}}
+            data={radioOptions1}
+            variant="outlined"
+            direction="row"
+            checkChanged={() => console.log("changed")}
           />
-          </div>
+        </div>
       </div>
       <div className={classes.funcBtn}>
-          <Button variant="outlined" className={classes.btnCancel}>
-              cancel
-
-          </Button>
-          <Button variant="outlined" className={classes.btnCancel}>
-              Submit
-
-          </Button>
-
+        <Button variant="outlined" className={classes.btnCancel}>
+          cancel
+        </Button>
+        <Button variant="outlined" className={classes.btnCancel}>
+          Submit
+        </Button>
       </div>
     </div>
   );
 };
 
-
-export default withStyles(styles) (changeDueDate)
+export default withStyles(styles)(ChangeDueDate);

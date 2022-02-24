@@ -15,7 +15,7 @@ interface data {
 
 interface radioIcon {
   checkedIcon: string;
-  uncheckedIcon: string;
+  unCheckedIcon: string;
 }
 
 export interface RadioButtonProps {
